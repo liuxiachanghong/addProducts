@@ -1,0 +1,15 @@
+<template>
+    <div class="tree-grid-container">
+        <div class="myTreeGrid">
+            <lightning-spinner if:true={isLoading} alternative-text="Loading" size="medium"></lightning-spinner>
+            <lightning-datatable data={records} columns={columns} key-field="Id" hide-checkbox-column="false"
+                oncellchange={handleCellChange} onsave={handleSave} draft-values={draftValues}>
+            </lightning-datatable>
+        </div>
+        <div class="fixed-bottom-button slds-m-around_small">
+            <button class="slds-button slds-button_brand slds-button_stretch" disabled={createButtonDisabled}
+                onclick={handleCreate}>Create
+            </button>
+        </div>
+    </div>
+</template>

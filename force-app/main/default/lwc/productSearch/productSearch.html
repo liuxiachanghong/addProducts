@@ -1,0 +1,29 @@
+<template>
+    <template lwc:if={showTreeGrid}>
+        <div class="tree-grid-container">
+            <div class="myTreeGrid">
+                <lightning-tree-grid columns={columns} data={gridData} key-field="Id"
+                    onrowselection={handleRowSelection}>
+                </lightning-tree-grid>
+            </div>
+            <div class="fixed-bottom-button slds-m-around_small">
+                <button class="slds-button slds-button_brand slds-button_stretch" onclick={handleSelectAction}>Select
+                </button>
+            </div>
+        </div>
+    </template>
+    <template lwc:if={showDatatable}>
+        <c-product-items record-id={recordId} records={records} onclosedatatable={handleFinish}></c-product-items>
+    </template>
+    <template lwc:if={showSuccess}>
+        <lightning-card class="custom-success-container">
+            <div class="custom-success-container">
+                <lightning-icon icon-name="standard:opportunity" size="large"></lightning-icon>
+            </div>
+            <div class="slds-m-around_small">
+                <lightning-formatted-text value=" The lineItems are successfully created."
+                    class="slds-text-heading_small"></lightning-formatted-text>
+            </div>
+        </lightning-card>
+    </template>
+</template>

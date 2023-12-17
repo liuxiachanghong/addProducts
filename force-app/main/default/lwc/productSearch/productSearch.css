@@ -1,0 +1,23 @@
+.tree-grid-container {
+    position: relative;
+    height: 80vh;
+}
+
+.myTreeGrid {
+    overflow-y: auto;
+    height: calc(100% - 60px);
+}
+
+.fixed-bottom-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+}
+
+.custom-success-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;;
+}
